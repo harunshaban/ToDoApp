@@ -28,6 +28,13 @@ class _TodoListState extends State<TodoList> {
     });
   }
 
+  // Build a single todo item
+  Widget _buildTodoItem(String todoText){
+    return ListTile(
+      title: Text(todoText),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
