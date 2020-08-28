@@ -28,6 +28,17 @@ class _TodoListState extends State<TodoList> {
     });
   }
 
+  // Build the whole list of todo items
+  Widget _buildTodoList() {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        if(index < _todoItems.length) {
+          return _buildTodoItem(_todoItems[index]);
+        }
+      },
+    );
+  }
+
   // Build a single todo item
   Widget _buildTodoItem(String todoText){
     return ListTile(
