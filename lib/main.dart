@@ -29,8 +29,10 @@ class _TodoListState extends State<TodoList> {
   }
 
   // Build the whole list of todo items
+
   Widget _buildTodoList() {
     return ListView.builder(
+      // ignore: missing_return
       itemBuilder: (context, index) {
         if(index < _todoItems.length) {
           return _buildTodoItem(_todoItems[index]);
@@ -51,6 +53,12 @@ class _TodoListState extends State<TodoList> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Todo List'),
+      ),
+      body: _buildTodoList(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _addToDoItem,
+        tooltip: 'Add task',
+        child: Icon(Icons.add),
       ),
     );
   }
